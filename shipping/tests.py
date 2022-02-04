@@ -159,11 +159,11 @@ class CourierPriceAPITestCase(APITestCase):
         self.product = Product.objects.create()
         self.courier_price_url = reverse('courier_price', args=(self.product.pk,))
 
+    # we should mock this test
     def test_price(self):
         self.client.force_login(self.admin)
         data = {
-            'to_latitude':
-            'to_longitude': 
-            'country_id': 
+            'to_latitude': '2.2',
+            'to_longitude': '2.1810'
         }
         self.client.post(self.courier_price_url, )
