@@ -201,3 +201,18 @@ so this `https://prodapi.shipox.com/api/v1/customer/authenticate`  will change t
         "authorize":""
     }
 }```
+
+
+
+
+
+
+
+======================================
+and if you need authorize you will hit this url `courier/authorize/` to get authorize response from courier.
+
+and if you need shipping price for product x you will hit this url `courier/x/price` to get price response from courier platform.
+
+and if you need creating shipping for product x you will hit this url `courier/x/create_order` to get ship order and get response from courier platform.
+
+## and more
