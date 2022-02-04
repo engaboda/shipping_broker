@@ -34,7 +34,7 @@ class Request():
                 if response.status_code == 200:
                     return response
                 logger.info(f'<{self.courier_name}> response: {response.json()} status={response.status_code}')
-                raise ResponseException({
+                raise ResponseException(
                     {f'{self.courier_name}': response.json()},
                     code=response.status_code
                 )

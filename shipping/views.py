@@ -5,7 +5,7 @@ from .models import Courier
 from inventory.models import Product
 from payment.models import Order
 from rest_framework.permissions import IsAuthenticated
-from .ship import ShipClient
+from shipping.couriers.ship import ShipClient
 from rest_framework.response import Response
 from django.contrib.auth import get_user_model
 from accounts.models import UserAddress

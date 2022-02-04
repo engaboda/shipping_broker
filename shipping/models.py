@@ -69,11 +69,11 @@ class ShippingOrder(models.Model):
     # to store guest user info instead of creating new model
     guest_user = JSONField()
     guest_user_address = JSONField()
-    status = model.CharField(choices=(
+    status = models.CharField(choices=(
         ('new', 'new'),
         ('cancelled', 'cancelled'),
         ('done', 'done'),
-        ))
+        ), max_length=11)
 
     start = models.DateTimeField(default=timezone.now)
     courier = models.ForeignKey(

@@ -42,7 +42,7 @@ class PackageTypeSerializer(serializers.Serializer):
 
 class ChargeItemsSerializer(serializers.Serializer):
     paid = serializers.BooleanField()
-    charge = serializers.DecimalField()
+    charge = serializers.DecimalField(max_digits=9, decimal_places=2)
     charge_type = serializers.CharField()
 
 
@@ -55,7 +55,7 @@ class CourierCreateOrderSerializer(serializers.Serializer):
     recipient_not_available = serializers.CharField()
     payment_type  = serializers.CharField()
     payer = serializers.CharField()
-    parcel_value = serializers.DecimalField()
+    parcel_value = serializers.DecimalField(max_digits=9, decimal_places=2)
     fragile = serializers.BooleanField()
     note = serializers.CharField()
     piece_count = serializers.CharField()
