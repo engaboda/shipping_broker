@@ -1,0 +1,47 @@
+version: 0.1
+workflow:
+  steps:
+    shipbox:
+      - description: get access details for {test, prod} with host_name
+      authorize:
+        - description: |
+          get jwt token valid for 24 hours.
+        - run: |
+          post request to ``
+          headers {'Content-Type': 'application/json', 'Accept':'application/json'}
+          body {'username': '', 'password': '', 'remember-me': True}
+        - run: |
+          response from last step
+          {
+            'data': {
+              'id_token': 'jwt token',
+              'user':{
+                user info
+              }
+            }
+          }
+      countries:
+        - description: |
+          get country id where you left ot pick up
+        - run: |
+          get request to `?name=egypt`
+          headers {'Content-Type': 'application/json', 'Accept':'application/json', 'Authorization': 'Bearer id_token'}
+        - run: |
+          response from last step
+          {
+            countries list with id
+          }
+      cities:
+        - description: |  
+          get cities in specific country
+      price:
+        - description: for package price accept order and send its info to shipbox to get price
+      order:
+        - description: create order to deliver
+      status:
+        - description: missing
+    smsa:
+      authorize: get token
+      price: get price for order
+      order: create order
+      status: status of order
