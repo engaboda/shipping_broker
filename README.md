@@ -1,5 +1,5 @@
 # shipping_broker
-adding shipment with now code.
+adding shipment with no code.
 
 # shipping example
 * you should login to courier platform and get access info details
